@@ -1,0 +1,248 @@
+body {
+    margin:0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fff;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Základní styly zůstávají stejné */
+
+.dark-mode-switch {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    margin-left: 20px; /* Přidání mezery na levé straně přepínače */
+}
+
+.toggle {
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    background-color: #fff;
+    border-radius: 17px;
+    position: relative;
+    cursor: pointer;
+}
+
+/* Responzivní styly a další zůstávají stejné */
+
+
+img{
+    width:fit-content;
+    height: 200px;
+}
+
+.small-image{
+    width: auto;
+    height: 50px;
+}
+
+.banner-image{
+    
+    width: 100%; /* Obrázek zaujme celou šířku stránky */
+    height: auto; /* Zajistí zachování poměru stran obrázku */
+    display: block; /* Odstraní mezery pod obrázkem */
+
+}
+
+.toggle:before {
+    content: '';
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: #ccc;
+    left: 3px;
+    top: 3px;
+    transition: transform 0.4s;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"]:checked + .toggle {
+    
+    background-color: #3498db;
+}
+
+input[type="checkbox"]:checked + .toggle:before {
+    transform: translateX(26px);
+}
+
+header {
+    background-color: #3498db;
+    color: #fff;
+    padding: 3px 0;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/*Zde mohu nastavit mezery horní lišty*/
+.container {
+    display: flex;
+    justify-content: space-between; /* Zarovnávání na okraj */
+    align-items: center; /* Zarovnání na svislé ose */
+
+}
+
+.container-2{
+    width: 100%; /* Šířka kontejneru */
+    height: 400px; /* Výška kontejneru */
+    background-color: #f0f0f0; /* Barva pozadí kontejneru */
+    border: 2px solid #333; /* Ohraničení kontejneru */
+    padding: 20px; /* Odsazení uvnitř kontejneru */
+    box-sizing: border-box; /* Velikost kontejneru zahrnuje ohraničení a padding */
+    margin: auto;
+    margin-bottom: 100px;
+}
+
+.bottom{
+    display: flex;
+    align-items: center;
+    margin: 0px;
+    text-align: center;
+}
+
+.logo {
+    display: flex; /* Použití flexboxu pro zarovnání prvků */
+    align-items: center; /* Zarovnání prvků na svislé ose */
+    justify-content: center; /* Zarovnání prvků na vodorovné ose */
+}
+
+.logo img {
+    width: auto; /* Přizpůsobení šířky loga */
+    height: 60px; /* Příklad nastavení výšky loga */
+    cursor: pointer;
+    margin-right: 10px;
+    margin-left: 40px;
+}
+
+.logo-text {
+    font-size: 40px; /* Velikost textu */
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-left: 15px;
+}
+
+nav {
+    float: right;
+    height: 30px;
+    margin-bottom: 43px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+
+}
+
+nav ul li {
+    display: inline-block;
+
+    margin-right: 25px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 22px;
+    line-height: 75px;
+
+}
+
+nav ul li a:hover {
+    color: #ffd700;
+}
+
+.section {
+    padding-top: 100px;
+    padding-left: 50px;
+    padding-right: 50px;
+    text-align: center;
+
+}
+
+.service {
+    margin-bottom: 50px;
+}
+
+footer {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+
+body.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+.dark-mode input:checked ~ header,
+.dark-mode input:checked ~ footer {
+    background-color: #111;
+}
+
+.dark-mode input:checked ~ .toggle {
+    background-color: #777;
+}
+
+.dark-mode input:checked ~ .toggle:before {
+    background-color: #fff;
+}
+
+/* Základní styly zůstávají stejné */
+
+/* Responzivní styly */
+@media only screen and (max-width: 768px) {
+    /* Styly pro mobilní zařízení */
+    .logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .logo img {
+        width: 40%;
+        margin-right: 10px;
+    }
+
+    .logo-text {
+        font-size: 24px;
+    }
+
+    nav {
+        float: none;
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    nav ul li a {
+        font-size: 18px;
+        line-height: 40px;
+    }
+}
+
